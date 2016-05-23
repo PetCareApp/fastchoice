@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>fastchoice</display-name>
+  <welcome-file-list>
+    <welcome-file>login.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <context-param>
+    	<param-name>additionalPermissions</param-name>
+    	<param-value>email,user_location,user_hometown,user_relationship_details,user_relationships,user_birthday</param-value>
+  	</context-param>
+	<context-param>
+		<param-name>facebookAppId</param-name>
+		<param-value>1525888181054654</param-value>
+	</context-param>
+	<context-param>
+		<param-name>facebookAppSecret</param-name>
+		<param-value>527a3220badd8b1eb6e1511d60cbe7cf</param-value>
+	</context-param>
+	
+	<servlet>
+		<servlet-name>LoginFacebook</servlet-name>
+		<servlet-class>br.com.fastchoice.model.controller.facebook.LoginFacebook</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LoginFacebook</servlet-name>
+		<url-pattern>/loginFacebook</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>CallBackFacebook</servlet-name>
+		<servlet-class>br.com.fastchoice.model.controller.facebook.CallBackFacebook</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CallBackFacebook</servlet-name>
+		<url-pattern>/callBackFacebook</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>AddAmigo</servlet-name>
+		<servlet-class>br.com.fastchoice.model.controller.AddAmigo</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AddAmigo</servlet-name>
+		<url-pattern>/addAmigo</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>EditPerfil</servlet-name>
+		<servlet-class>br.com.fastchoice.model.controller.EditPerfil</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EditPerfil</servlet-name>
+		<url-pattern>/editPerfil</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>SendSair</servlet-name>
+		<servlet-class>br.com.fastchoice.model.controller.SendSair</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SendSair</servlet-name>
+		<url-pattern>/sendSair</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+        <servlet-name>FileUploadHandler</servlet-name>
+        <servlet-class>br.com.fastchoice.model.controller.FileUploadHandler</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FileUploadHandler</servlet-name>
+        <url-pattern>/upload</url-pattern>
+    </servlet-mapping>
+</web-app>
